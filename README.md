@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+QR Code Generator & Scanner PWA:Ứng dụng Progressive Web App (PWA) để tạo và quét mã QR code, hoạt động offline và có thể cài đặt trên điện thoại.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tính Năng
+    Tạo Mã QR: Nhập text/URL → tạo mã QR → tải về máy
+    Quét Mã QR: Sử dụng camera để quét mã QR
+    PWA: Có thể cài đặt trên màn hình điện thoại
+    Offline: Hoạt động không cần kết nối internet
+    Responsive: Giao diện tối ưu cho mobile & desktop
 
-## Available Scripts
+Công Nghệ Sử Dụng
+    Frontend: React 18, HTML5, CSS3, JavaScript ES6+
+    QR Generation: qrcode.react
+    QR Scanning: html5-qrcode
+    PWA: Service Worker, Web App Manifest
+    Storage: LocalStorage
+    Build Tool: Create React App
 
-In the project directory, you can run:
+Cài Đặt và Chạy Ứng Dụng
+    Điều Kiện Tiên Quyết
+    Node.js >= 16.0.0
+    npm >= 8.0.0
 
-### `npm start`
+Các Bước Chạy Ứng Dụng
+1. Clone repository
+    git clone https://github.com/hanth0509/qr-code-pwa.git
+    cd qr-code-pwa
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Cài đặt dependencies
+    npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Chạy development server
+    npm start
+Ứng dụng sẽ chạy tại: http://localhost:3000
 
-### `npm test`
+4. Build production
+    npm run build
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Chạy bản production
+    npx http-server build    
+    
+Hướng Dẫn Sử Dụng
+    Tạo Mã QR
+        Vào tab "Tạo QR"
+        Nhập text hoặc URL vào ô nhập liệu
+    =>Mã QR sẽ tự động hiển thị
+    Click "Tải QR Code" để tải về máy
 
-### `npm run build`
+    Quét Mã QR
+        Vào tab "Quét QR"
+        Cho phép ứng dụng truy cập camera
+        Đưa mã QR vào khung quét
+    =>Kết quả sẽ hiển thị ngay lập tức
+        Tải Hình ảnh lên để quét mã QR
+    =>Kết quả sẽ hiển thị ngay lập tức
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Lịch sử sẽ được cập sau khi lưu mã qr hoặc quét đc mã qr từ camera hay hình ảnh được tải lên
+    Xóa Lịch sử (Tất cả hoặc mã QR muốn xóa)

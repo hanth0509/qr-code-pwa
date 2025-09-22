@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import QRGenerator from './components/QRGenerator';
+import QRScanner from './components/QRScanner';
+import QRHistory from './components/QRHistory';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('generator');
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1> QR Code App</h1>
+        <p>PWA application to create and scan the QR code</p>
       </header>
+
+      <nav className="tab-navigation">
+        <button
+          className={activeTab === 'generator' ? 'active' : ''}
+          onClick={() => setActiveTab('generator')}
+        >
+          🖨️ Tạo QR
+        </button>
+        <button
+          className={activeTab === 'scanner' ? 'active' : ''}
+          onClick={() => setActiveTab('scanner')}
+        >
+          📷 Quét QR
+        </button>
+      </nav>
+
+      <main className="tab-content">
+        {activeTab === 'generator' && <QRGenerator />}
+        {activeTab === 'scanner' && <QRScanner />}
+         <QRHistory />
+      </main>
+
+      <footer className="App-footer">
+        <p>Install on the phone to conveniently scan the QR Text/Link and read QR Code from the camera. 📱</p>
+      </footer>
     </div>
   );
 }
