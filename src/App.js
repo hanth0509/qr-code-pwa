@@ -19,13 +19,13 @@ function App() {
           className={activeTab === 'generator' ? 'active' : ''}
           onClick={() => setActiveTab('generator')}
         >
-          🖨️ Tạo QR
+          🖨️ Create QR
         </button>
         <button
           className={activeTab === 'scanner' ? 'active' : ''}
           onClick={() => setActiveTab('scanner')}
         >
-          📷 Quét QR
+          📷 Scan QR
         </button>
       </nav>
 
